@@ -652,9 +652,6 @@ body.overlay-open .fixed-area {
   margin: 100px auto 0;
   max-width: 1000px;
 }
-.overlay-wrapper.about-overlay {
-  max-width: 375px;
-}
 .overlay-wrapper img {
   width: 100%;
   margin: 0;
@@ -736,6 +733,9 @@ p.copy a {
   .overlay-wrapper img {
     width: 100%;
     margin: 0 0 20px 0;
+  }
+  .overlay-wrapper.about-overlay .block {
+    padding: 0;
   }
 
   .text-block, .overlay-wrapper h1 {

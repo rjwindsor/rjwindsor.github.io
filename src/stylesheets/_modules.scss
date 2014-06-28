@@ -183,7 +183,6 @@ body.overlay-open .fixed-area{
   margin: 100px auto 0;
   max-width: 1000px;
   @extend %clearfix;
-  &.about-overlay{max-width: 375px;}
   img{
     width: 100%;
     margin: 0;

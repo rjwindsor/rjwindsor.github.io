@@ -7,11 +7,11 @@
 .overlay-wrapper{
   width: auto;
   padding: 0 100px;
-  
   img{
     width: 100%;
     margin: 0 0 20px 0;
   }
+  &.about-overlay .block{padding: 0;}
 }
 
 .text-block, .overlay-wrapper h1{
