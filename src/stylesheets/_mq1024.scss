@@ -1,0 +1,72 @@
+// 1024 ===================================================
+
+.fixed-area{
+  margin: 0 5.625%;
+}
+
+// Header
+.filter, .site-title{display: none !important;}
+header ul, .about, .email{display: block !important;}
+
+// Grid Sizing
+.grid-sizer, .item{width: 28.680555556%;}
+.gutter-sizer {width: 1.388888889%;}
+
+// Project Text
+.overlay-wrapper h1{
+  float: left;
+  margin-left: 98px;
+  width:35%;
+  padding: 0;
+}
+
+.text-block{
+  float: right;
+  margin-right: 100px;
+  width:40%;
+  padding: 0;
+}
+
+
+
+
+
+.block{
+  float: left;
+  width: 45%;
+    position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  &.one{margin-right: 10%;}
+}
+
+.overlay-wrapper.about-overlay{
+  max-width: 800px;
+  margin-top: 0;
+}
+
+
+// Pagination - God dam it dickie! 
+
+.pagination{
+  position: absolute;
+  left: 50%;
+  margin-left: -94px;
+  width: 188px;
+  background-position: 112px 0;
+  a{
+    display: inline-block;
+    background: none;
+    line-height:1;
+    text-indent: 0;
+    width: auto;
+    position: relative;
+    top: 8px;
+    margin: 0;
+    font-size: 19px;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+  }
+}

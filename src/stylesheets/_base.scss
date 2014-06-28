@@ -1,0 +1,33 @@
+// Base
+// Base styles for HTML elements. No class's or IDs should be used here.
+
+// Body
+// ------------------------------------------------------------
+
+body {
+  background: $light;
+  color: $dark;
+}
+
+// Paragraphs
+// ------------------------------------------------------------
+
+// Links
+// ------------------------------------------------------------
+
+a {
+  color: $dark;
+  text-decoration: none;
+}
+
+a img {border: none;}
+
+// Headings
+// ------------------------------------------------------------
+h1{
+  font-size: 50px;
+}
+
+// Table
+// ------------------------------------------------------------
+table { border-collapse: collapse; }

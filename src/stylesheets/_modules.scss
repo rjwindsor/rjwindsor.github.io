@@ -1,0 +1,264 @@
+// Modules
+// Site wide modules. Components, sub navigation etc.
+
+// Header
+body.overlay-open {overflow-y:hidden;}
+
+header{
+  font-size: 19px;
+  letter-spacing: 1px;
+  height: 78px;
+  // background: #f3f3f3;
+  // background: rgba(243, 243, 243, 0.95);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 888;
+  a{
+    padding-bottom: 5px;
+    border-bottom: solid 1px transparent;
+    
+    -webkit-transition: border 0.2s linear;
+    -moz-transition: border 0.2s linear;
+    -ms-transition: border 0.2s linear;
+    -o-transition: border 0.2s linear;
+    transition: border 0.2s linear;
+
+    &.active{border-color: $contrast;}
+  }
+
+  // ul li a:hover{border-color:transparent;}
+
+  -webkit-animation: fade-in 0.8s 1; /* Safari 4+ */
+  -moz-animation:    fade-in 0.8s 1; /* Fx 5+ */
+  -o-animation:      fade-in 0.8s 1; /* Opera 12+ */
+  animation:         fade-in 0.8s 1; /* IE 10+ */
+}
+
+.email, .site-title{
+  z-index: 99999999;
+  position: fixed;
+  top: 26px;
+  left: 30px;
+  font-size: 19px;
+  letter-spacing: 1px;
+}
+
+.about, .filter{
+  position: fixed;
+  top: 26px;
+  right: 30px;
+}
+
+.email, header ul, .filter{display: none;}
+
+.filter{
+  right: 115px;
+  padding-left: 20px;
+  background: url("/assets/filter.gif") no-repeat 0 8px;
+}
+
+header ul {
+  margin: 0 0 0 -158px;
+  width: 317px;
+  padding: 0;
+  position: fixed;
+  left: 50%;
+  top: 26px;
+  li{
+    float: left;
+    list-style-type: none;
+    list-style-position: outside;
+    margin: 0 0 0 30px;
+    height: 36px;
+    &:first-child{
+      margin-left: 0;
+      padding-right: 41px;
+      background: url("/assets/slash.png") no-repeat right -8px;
+    }
+  }
+}
+
+
+.fixed-area{
+  width: 100%;
+  height: 100%;
+}
+
+body{  overflow-y: scroll;}
+
+body.overlay-open .fixed-area{
+  position: fixed;
+  left:0px;
+  z-index: 777;
+}
+
+
+// Main Content
+.main-content{
+  margin: 100px auto 0;
+  overflow-y: hidden;
+  -webkit-animation: fade-in 1.2s 1; /* Safari 4+ */
+  -moz-animation:    fade-in 1.2s 1; /* Fx 5+ */
+  -o-animation:      fade-in 1.2s 1; /* Opera 12+ */
+  animation:         fade-in 1.2s 1; /* IE 10+ */
+}
+
+.item{
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  img{width: 100%;}
+}
+
+.grid-sizer, .item{width: 100%;}
+.gutter-sizer { width: 0%; }
+
+
+// Fade In Annimation
+@-webkit-keyframes fade-in {
+  0%   { opacity: 0; }
+  50%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes fade-in {
+  0%   { opacity: 0; }
+  50%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes fade-in {
+  0%   { opacity: 0; }
+  50%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fade-in {
+  0%   { opacity: 0; }
+  50%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+// Overlay
+.overlay{
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(243, 243, 243, 0.95);
+  display: none;
+  overflow-y:scroll;
+  z-index: 999;
+
+  -webkit-transition: background 0.2s linear;
+  -moz-transition: background 0.2s linear;
+  -ms-transition: background 0.2s linear;
+  -o-transition: background 0.2s linear;
+  transition: background 0.2s linear;
+
+
+  .email, .site-title{position: absolute;display: none;}
+  &.active{display: block;}
+  .close{
+    position: absolute;
+    top: 26px;
+    right: 30px;
+    font-size: 19px;
+    color: $close;
+  }
+  @extend %clearfix;
+}
+
+.overlay.active header{
+  background: none;
+  -webkit-animation: none;
+  -moz-animation: none;
+  -o-animation: none;
+  animation: none;
+}
+
+
+.overlay-wrapper{
+  width: 100%;
+  margin: 100px auto 0;
+  max-width: 1000px;
+  @extend %clearfix;
+  &.about-overlay{max-width: 375px;}
+  img{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+}
+
+// Overlay Wrapper
+.overlay-wrapper{
+  p {
+    margin: 0;
+    padding: 0;
+    text-indent: 35px;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}
+
+
+.text-block, .overlay-wrapper h1{
+  margin: 0 30px 48px 30px;
+  display: block;
+}
+
+.pagination{
+  position: absolute;
+  top: 19px;
+  left: 30px;
+  width: 78px;
+  height: 36px;
+  background: url(/assets/slash.png) no-repeat center center;
+}
+
+.pagination a{
+  @extend %image-replacement;
+  display: block;
+  padding: 0;
+  width: 18px;
+  height: 36px;
+}
+
+.prev{
+  background: url(/assets/arrow-left.png) no-repeat left center;
+  margin-right: 40px;
+  float: left;
+}
+
+.next{
+  background: url(/assets/arrow-right.png) no-repeat left center;
+  float: right;
+}
+
+
+// About
+.overlay-wrapper p.body-email{
+  font-weight: bold;
+  font-style: normal;
+  padding-bottom: 20px;
+  text-indent: 0;
+}
+
+.block{
+  padding: 0 30px;
+}
+
+
+// Footer
+p.copy{
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 0 20px 0;
+  a{
+    border-bottom: solid 1px $dark;
+    padding-bottom: 2px;
+  }
+}

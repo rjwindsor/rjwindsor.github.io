@@ -1,0 +1,21 @@
+// This is a manifest file that'll be compiled into ie.css, which will include all the files listed below.
+
+// Base Files
+@import "normalize"; // Normalize the Browsers 
+@import "settings"; // Variables, Mixins, Placeholders etc
+@import "typography"; // Basic site typography 
+@import "base"; // Basic element styles
+@import "site-layout"; // Basic element styles
+@import "modules"; // Site wide modules
+
+// Media Queries
+// ------------------------------------------------------------
+
+// @import "mq481";
+
+
+// IE Specific Fixes
+// ------------------------------------------------------------
+html.ie7 {} //eo:ie7
+html.ie8 {} //eo:ie8
+html.ie8 {} //eo:ie9

@@ -1,0 +1,51 @@
+// 768 ===================================================
+
+.fixed-area{
+  margin: 0 6.510416667%;
+}
+
+.overlay-wrapper{
+  width: auto;
+  padding: 0 100px;
+  
+  img{
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+}
+
+.text-block, .overlay-wrapper h1{
+  margin: 0 0 48px 0;
+}
+
+// Header
+.site-title{display: none;}
+.email, .filter{display: block;}
+
+.overlay{
+  .email {display: block;}
+  .site-title{display: none;}
+}
+
+// Grid Sizing
+.grid-sizer, .item{width: 42.1875%;}
+.gutter-sizer {width: 2.604166667%;}
+
+.item{
+  margin-bottom: 20px;
+}
+
+
+// About Layout
+
+.body-email{display: none;}
+
+.text-block{
+  margin: 0 auto 48px auto;
+}
+
+// Pagination
+.pagination{
+  right: 106px;
+  left: auto;
+}
