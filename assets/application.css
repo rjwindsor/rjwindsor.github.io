@@ -461,7 +461,7 @@ header a {
   transition: border 0.2s linear;
 }
 header a.active {
-  border-color: #bebebe;
+  border-color: rgba(30, 30, 30, 0.25);
 }
 
 .email, .site-title {
@@ -720,7 +720,7 @@ p.copy {
   padding: 10px 0 20px 0;
 }
 p.copy a {
-  border-bottom: solid 1px #1e1e1e;
+  border-bottom: solid 1px rgba(30, 30, 30, 0.25);
   padding-bottom: 2px;
 }
 

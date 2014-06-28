@@ -24,7 +24,7 @@ header{
     -o-transition: border 0.2s linear;
     transition: border 0.2s linear;
 
-    &.active{border-color: $contrast;}
+    &.active{border-color: rgba($dark, 0.25);}
   }
 
   // ul li a:hover{border-color:transparent;}
@@ -258,7 +258,7 @@ p.copy{
   text-align: center;
   padding: 10px 0 20px 0;
   a{
-    border-bottom: solid 1px $dark;
+    border-bottom: solid 1px rgba($dark, 0.25);
     padding-bottom: 2px;
   }
 }
