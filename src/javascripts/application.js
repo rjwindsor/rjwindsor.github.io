@@ -58,6 +58,8 @@ $( document ).ready(function() {
 
   // Overlay
   var overlay = $(".overlay");
+  var overlayDark = $(".overlay-dark");
+
 
   // About Open
   $(".about").click(function(){
@@ -102,14 +104,16 @@ $( document ).ready(function() {
 
   // Project Prev/Next
   $(".overlay").on( "click", ".pagination a", function() {
-    overlay.empty();
+    overlayDark.fadeIn(200);
     var itemUrl = $(this).attr("href");
     $.ajax({
       url: itemUrl,
       context: document.body
     }).done(function(html) {
-      overlay.append(html);
+      overlay.empty().append(html);
     });
+    overlayDark.delay(200).fadeOut(200);
+
     event.preventDefault()
   });
 
