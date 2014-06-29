@@ -6,6 +6,7 @@ $( document ).ready(function() {
     itemSelector: '.item',
     layoutMode: 'masonry',
     transitionDuration: '0.2s',
+    isResizeBound: true,
     masonry: {
       columnWidth: '.grid-sizer',
       gutter: '.gutter-sizer'
