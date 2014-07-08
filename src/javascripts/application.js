@@ -103,6 +103,10 @@ $( document ).ready(function() {
     $(".about-overlay").height(windowHeight - 20);
   }
 
+  function projectHeight() {
+    
+  }
+
   // Project Prev/Next
   $(".overlay").on( "click", ".pagination a", function() {
     overlayDark.fadeIn(200);
@@ -117,11 +121,6 @@ $( document ).ready(function() {
 
     event.preventDefault()
   });
-
-  // click link
-  // project fades to black
-  // new project is loaded
-  // Project overl fades back in
 
 }); //eo:jQuery
 

@@ -376,7 +376,7 @@ table {
   border-spacing: 0;
 }
 
-.overlay:after, .overlay-wrapper:after {
+.overlay-wrapper:after {
   content: ".";
   display: block;
   height: 0;
@@ -528,7 +528,6 @@ body.overlay-open .fixed-area {
 
 .main-content {
   margin: 100px auto 0;
-  overflow-y: hidden;
   -webkit-animation: fade-in 1.2s 1;
   /* Safari 4+ */
   -moz-animation: fade-in 1.2s 1;
@@ -611,12 +610,13 @@ body.overlay-open .fixed-area {
 }
 .overlay {
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   background: rgba(243, 243, 243, 0.95);
   display: none;
+  overflow-x: hidden;
   overflow-y: scroll;
   z-index: 999;
   -webkit-transition: background 0.2s linear;
