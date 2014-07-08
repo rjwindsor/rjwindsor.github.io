@@ -1,19 +1,26 @@
 <html>
   <head>
     <style>
-      .overlay{background: rgba(0, 131, 223, 0.95);} /*Backgrond colour. Convert to RGBA using hex2rgba.devoth.com*/
+      .overlay{
+        background: rgb(0, 131, 223); /* Backgrond colour.Backup for old browsers, can put normal hex here */
+        background: rgba(0, 131, 223, 0.95);/* Backgrond colour. Convert to RGBA using hex2rgba.devoth.com */
+      } 
       .overlay {color: #fff;} /*Body color*/
       .overlay .close{color: #1e1e1e;} /*Close color*/
     </style>
   </head>
   <body>
-    <a href="mailto:hello@richard-windsor.co.uk" class="email">hello@richard-windsor.co.uk</a>
-    <a href="mailto:hello@richard-windsor.co.uk" class="site-title">Richard Windsor</a>
-    <nav class="pagination">
-      <a class="prev" href="project.html">Previous</a>
-      <a class="next" href="project.html">Next</a>
-    </nav>
-    <a href="/" class="close">Close</a>
+
+    <header>
+      <a href="mailto:hello@richard-windsor.co.uk" class="email">hello@richard-windsor.co.uk</a>
+      <a href="mailto:hello@richard-windsor.co.uk" class="site-title">Richard Windsor</a>
+      <nav class="pagination">
+        <a class="prev" href="project.html">Previous</a>
+        <a class="next" href="project.html">Next</a>
+      </nav>
+      <a href="/" class="close">Close</a>
+    </header>
+
     <div class="overlay-wrapper project-overlay">
       <h1>Project</h1>
       <div class="text-block">
