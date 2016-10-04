@@ -1,8 +1,23 @@
 // Start jQuery
 $( document ).ready(function() {
+
+var $body = $('body'),
+    $container = $('.main-content'),
+    $filters = $('header ul li'),
+    $filterMenu = $('header ul'),
+    $links = $('.filter, .about, .email'),
+    $filter = $('.filter'),
+    $about = $('.about'),
+    $overlay = $(".overlay"),
+    $overlayDark = $(".overlay-dark"),
+    $item = $(".item");
+
+
+
   
-  // initialize Isotope
-  var $container = $('.main-content').isotope({
+  // Initialize Isotope
+  // --------------------------------------------------------
+  $container.isotope({
     itemSelector: '.item',
     layoutMode: 'masonry',
     transitionDuration: '0.2s',
@@ -13,32 +28,36 @@ $( document ).ready(function() {
     }
   });
 
-  // layout Isotope again after all images have loaded
-  $container.imagesLoaded( function() {
+  // layout Isotope after each image loads
+  $container.imagesLoaded().progress( function() {
     $container.isotope('layout');
   });
 
 
+
   // Filter items on button click
-  $('header ul li').on( 'click', 'a', function() {
+  // --------------------------------------------------------
+  $filters.on( 'click', 'a', function(e) {
+    e.preventDefault();
     var filterValue = $(this).attr('data-filter');
     $container.isotope({ filter: filterValue });
     $(this).addClass("active").parent("li").siblings("li").children("a").removeClass("active");
     if( $(window).width() < 1024 ) {
-      $("header ul").fadeOut(200, function(){
-        $('.filter, .about, .email').delay(100).fadeIn("200");
+      $filterMenu.fadeOut(200, function(){
+        $links.delay(100).fadeIn("200");
       });
     }
-    event.preventDefault();
   });
 
-  // tablet scroll 
 
+
+  // Tablet Scroll 
+  // --------------------------------------------------------
   if( $(window).width() > 767 && $(window).width() < 1024 ) {
     $(window).scroll(function(){
-      if($("header ul").is(":visible")) {
-        $("header ul").fadeOut(200, function(){
-          $('.filter, .about, .email').delay(100).fadeIn("200");
+      if($filterMenu.is(":visible")) {
+        $filterMenu.fadeOut(200, function(){
+          $links.delay(100).fadeIn("200");
         });  
       }
      })
@@ -46,56 +65,54 @@ $( document ).ready(function() {
 
 
 
-
-  
-
   // Filter Button
-  $(".filter").click(function(){
-    $(".filter, .about, .email").fadeOut(200, function(){
-      $('header ul').delay(100).fadeIn("200");
+  // --------------------------------------------------------
+  $filter.click(function(e){
+    e.preventDefault();
+    $links.fadeOut(200, function(){
+      $filterMenu.delay(100).fadeIn("200");
     });
-    event.preventDefault();
   })
-
-  // Overlay
-  var overlay = $(".overlay");
-  var overlayDark = $(".overlay-dark");
 
 
   // About Open
-  $(".about").click(function(){
+  // --------------------------------------------------------
+  $about.click(function(e){
+    e.preventDefault();
     $.ajax({
       url: "about.html",
       context: document.body
     }).done(function(html) {
-      overlay.append(html).fadeIn("200").addClass("active");
-      $('body').addClass("overlay-open");
+      $overlay.append(html).fadeIn("200").addClass("active");
+      $body.addClass("overlay-open");
       overlaySize();
     });
-    event.preventDefault();
   })
 
   // Overlay Close
-  $(".overlay").on( "click", ".close", function() {
-    overlay.fadeOut("200", function(){
+  // --------------------------------------------------------
+  $overlay.on( "click", ".close", function(e) {
+    e.preventDefault();
+    $overlay.fadeOut("200", function(){
       $(this).empty().removeClass("active").removeAttr( "style" );
-      $("body").removeAttr( "style" ).removeClass("overlay-open");
+      $body.removeAttr( "style" ).removeClass("overlay-open");
     });
-    event.preventDefault()
   });
 
 
   // Project Open
-  $(".item").click(function(){
+  // --------------------------------------------------------
+  $item.click(function(e){
+    e.preventDefault();
     var itemUrl = $(this).attr("href");
     $.ajax({
       url: itemUrl,
       context: document.body
     }).done(function(html) {
-      overlay.append(html).fadeIn("200").addClass("active");
-      $('body').addClass("overlay-open");
+      $overlay.append(html).fadeIn("200").addClass("active");
+      $body.addClass("overlay-open");
     });
-    event.preventDefault();
+    
   })
 
   function overlaySize() {
@@ -103,26 +120,23 @@ $( document ).ready(function() {
     $(".about-overlay").height(windowHeight - 20);
   }
 
-  function projectHeight() {
-    
-  }
-
   // Project Prev/Next
-  $(".overlay").on( "click", ".pagination a", function() {
-    overlayDark.fadeIn(200);
+  // --------------------------------------------------------
+  $overlay.on( "click", ".pagination a", function(e) {
+     e.preventDefault();
+    $overlayDark.fadeIn(200);
     var itemUrl = $(this).attr("href");
     $.ajax({
       url: itemUrl,
       context: document.body
     }).done(function(html) {
-      overlay.empty().append(html);
+      $overlay.empty().append(html);
     });
-    overlayDark.delay(200).fadeOut(200);
-
-    event.preventDefault()
+    $overlayDark.delay(200).fadeOut(200);
   });
 
 }); //eo:jQuery
+
 
 // Remove Inline Styles on re-size
 $( window ).resize(function() {

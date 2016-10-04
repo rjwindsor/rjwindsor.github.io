@@ -18,9 +18,11 @@ body {
 a {
   color: $dark;
   text-decoration: none;
+  outline: 0;
+  cursor: pointer;
 }
 
-a img {border: none;}
+a img {border: none;outline: 0;}
 
 // Headings
 // ------------------------------------------------------------

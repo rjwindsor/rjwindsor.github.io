@@ -6,7 +6,7 @@
 
 .overlay-wrapper{
   width: auto;
-  padding: 0 100px;
+  padding: 0 100px 120px 100px;
   img{
     width: 100%;
     margin: 0 0 20px 0;
@@ -49,3 +49,7 @@
   right: 106px;
   left: auto;
 }
+
+
+// Footer
+p.copy span.break{display: none;clear: none;}
