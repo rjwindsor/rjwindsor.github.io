@@ -95,7 +95,11 @@ body.overlay-open .fixed-area{
   margin: 0;
   padding: 0;
   line-height: 0;
-  img{width: 100%;}
+  min-width: 100px;
+  min-height: 100px;
+  background-color: $contrast;
+  img{width: 100%;opacity: 0;transition: opacity 300ms;}
+  &.loaded img{opacity: 1;}
 }
 
 .grid-sizer, .item{width: 100%;}
@@ -149,12 +153,17 @@ body.overlay-open .fixed-area{
   width: 100%;
   margin: 100px auto 0;
   max-width: 1000px;
-  @extend %clearfix;
   img{
     width: 100%;
     margin: 0;
     padding: 0;
     display: block;
+    // opacity: 0;
+    background-color: #1e1e1e;
+    min-width: 100%;
+    min-height: 100px;
+    // transition: opacity 300ms;
+    // &.loaded{opacity: 1;}
   }
 }
 

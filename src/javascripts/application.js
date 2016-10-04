@@ -12,8 +12,6 @@ var $body = $('body'),
     $overlayDark = $(".overlay-dark"),
     $item = $(".item");
 
-
-
   
   // Initialize Isotope
   // --------------------------------------------------------
@@ -30,6 +28,7 @@ var $body = $('body'),
 
   // layout Isotope after each image loads
   $container.imagesLoaded().progress( function() {
+    $container.find('a').addClass("loaded");
     $container.isotope('layout');
   });
 
@@ -48,8 +47,6 @@ var $body = $('body'),
       });
     }
   });
-
-
 
   // Tablet Scroll 
   // --------------------------------------------------------
@@ -71,8 +68,21 @@ var $body = $('body'),
     e.preventDefault();
     $links.fadeOut(200, function(){
       $filterMenu.delay(100).fadeIn("200");
+      $body.addClass("filter-open");
     });
   })
+
+
+  $body.click(function(e){
+    e.preventDefault();
+    if($(this).hasClass("filter-open")){
+      $body.removeClass("filter-open");
+      $filterMenu.fadeOut(200, function(){
+        $links.delay(100).fadeIn("200");
+      });
+    }
+  })
+
 
 
   // About Open
@@ -88,6 +98,7 @@ var $body = $('body'),
       overlaySize();
     });
   })
+
 
   // Overlay Close
   // --------------------------------------------------------
@@ -111,6 +122,11 @@ var $body = $('body'),
     }).done(function(html) {
       $overlay.append(html).fadeIn("200").addClass("active");
       $body.addClass("overlay-open");
+
+      $overlay.imagesLoaded()
+        .progress( function(instance, image) {
+          $overlay.find("img").addClass("loaded");
+        });
     });
     
   })
