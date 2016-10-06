@@ -140,7 +140,17 @@ header ul {
   text-indent: 0;
 }
 
-.block{padding: 0 30px;}
+.block{
+  padding: 0 30px;
+}
+
+.text-block{
+  a{
+    text-decoration: underline;
+    &:hover{text-decoration: none;}
+  }
+}
+
 
 // Footer
 p.copy{
