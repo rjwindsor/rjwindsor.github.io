@@ -70,18 +70,6 @@ var $body = $('body'),
     });
   })
 
-
-  // $body.click(function(e){
-  //   e.preventDefault();
-  //   if($(this).hasClass("filter-open")){
-  //     $body.removeClass("filter-open");
-  //     $filterMenu.fadeOut(200, function(){
-  //       $links.delay(100).fadeIn("200");
-  //     });
-  //   }
-  // })
-
-
 // Fancybox
   $(".item, .about").fancybox({
     type       : 'ajax',
