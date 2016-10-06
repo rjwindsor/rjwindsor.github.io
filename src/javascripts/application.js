@@ -60,8 +60,6 @@ var $body = $('body'),
      })
   }
 
-
-
   // Filter Button
   // --------------------------------------------------------
   $filter.click(function(e){
@@ -84,71 +82,41 @@ var $body = $('body'),
   })
 
 
+// Fancybox
+  $(".item, .about").fancybox({
+    type       : 'ajax',
+    closeBtn   : false,
+    closeClick : false,
+    nextEffect : 'fade',
+    prevEffect : 'fade',
+    fitToView  : false,
+    autoSize   : false,
+    width      : '100%',
+    height     : '100%',
+    padding    : 0,
+    margin     : 0,
+    arrows     : false,
+    nextMethod : 'fade',
+    prevMethod : 'fade',
+  });
 
-  // About Open
-  // --------------------------------------------------------
-  $about.click(function(e){
+  // Close
+  $body.on( "click", ".close", function(e) {
     e.preventDefault();
-    $.ajax({
-      url: "about.html",
-      context: document.body
-    }).done(function(html) {
-      $overlay.append(html).fadeIn("200").addClass("active");
-      $body.addClass("overlay-open");
-      overlaySize();
-    });
-  })
-
-
-  // Overlay Close
-  // --------------------------------------------------------
-  $overlay.on( "click", ".close", function(e) {
-    e.preventDefault();
-    $overlay.fadeOut("200", function(){
-      $(this).empty().removeClass("active").removeAttr( "style" );
-      $body.removeAttr( "style" ).removeClass("overlay-open");
-    });
+    jQuery.fancybox.close();
   });
 
 
-  // Project Open
-  // --------------------------------------------------------
-  $item.click(function(e){
+  // Next
+  $body.on( "click", ".next", function(e) {
     e.preventDefault();
-    var itemUrl = $(this).attr("href");
-    $.ajax({
-      url: itemUrl,
-      context: document.body
-    }).done(function(html) {
-      $overlay.append(html).fadeIn("200").addClass("active");
-      $body.addClass("overlay-open");
+    jQuery.fancybox.next();
+  });
 
-      $overlay.imagesLoaded()
-        .progress( function(instance, image) {
-          $overlay.find("img").addClass("loaded");
-        });
-    });
-    
-  })
-
-  function overlaySize() {
-    var windowHeight = $(window).height();
-    $(".about-overlay").height(windowHeight - 20);
-  }
-
-  // Project Prev/Next
-  // --------------------------------------------------------
-  $overlay.on( "click", ".pagination a", function(e) {
-     e.preventDefault();
-    $overlayDark.fadeIn(200);
-    var itemUrl = $(this).attr("href");
-    $.ajax({
-      url: itemUrl,
-      context: document.body
-    }).done(function(html) {
-      $overlay.empty().append(html);
-    });
-    $overlayDark.delay(200).fadeOut(200);
+  // Prev
+  $body.on( "click", ".prev", function(e) {
+    e.preventDefault();
+    jQuery.fancybox.prev();
   });
 
 }); //eo:jQuery

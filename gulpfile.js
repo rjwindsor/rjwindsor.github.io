@@ -65,6 +65,7 @@ gulp.task('scripts', function() {
     paths.src + 'javascripts/jquery.min.js',
     paths.src + 'javascripts/imagesloaded.js',
     paths.src + 'javascripts/isotope.js',
+    paths.src + 'javascripts/fancybox.js',
     paths.src + 'javascripts/application.js'
   ])
  

@@ -14,12 +14,6 @@ header ul, .about, .email{display: block !important;}
 .gutter-sizer {width: 1.5637217%;}
 
 // Project Text
-.overlay-wrapper h1{
-  float: left;
-  margin-left: 98px;
-  width:35%;
-  padding: 0;
-}
 
 .text-block{
   float: right;
@@ -27,10 +21,6 @@ header ul, .about, .email{display: block !important;}
   width:40%;
   padding: 0;
 }
-
-
-
-
 
 .block{
   float: left;
@@ -44,8 +34,22 @@ header ul, .about, .email{display: block !important;}
 }
 
 .overlay-wrapper.about-overlay{
-  max-width: 800px;
-  margin-top: 0;
+  width: 800px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+
+
+     &:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+  }
 }
 
 
