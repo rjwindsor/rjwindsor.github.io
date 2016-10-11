@@ -73,5 +73,6 @@ header ul, .about, .email{display: block !important;}
     font-size: 19px;
     letter-spacing: 1px;
     text-transform: lowercase;
+    &.next {transform: rotate(0deg);}
   }
 }
