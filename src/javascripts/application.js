@@ -33,7 +33,6 @@ var $body = $('body'),
   });
 
 
-
   // Filter items on button click
   // --------------------------------------------------------
   $filters.on( 'click', 'a', function(e) {
@@ -75,8 +74,8 @@ var $body = $('body'),
     type       : 'ajax',
     closeBtn   : false,
     closeClick : false,
-    nextEffect : 'fade',
-    prevEffect : 'fade',
+    // nextEffect : 'fade',
+    // prevEffect : 'fade',
     fitToView  : false,
     autoSize   : false,
     width      : '100%',
@@ -88,23 +87,31 @@ var $body = $('body'),
     prevMethod : 'fade',
   });
 
+  
   // Close
   $body.on( "click", ".close", function(e) {
     e.preventDefault();
     jQuery.fancybox.close();
   });
 
-
   // Next
   $body.on( "click", ".next", function(e) {
     e.preventDefault();
-    jQuery.fancybox.next();
+    $overlayDark.fadeIn(200, function(){
+      $.fancybox.close();
+      $.fancybox.next();
+      setTimeout(function(){ $overlayDark.fadeOut(200); }, 200);
+    });
   });
 
   // Prev
   $body.on( "click", ".prev", function(e) {
     e.preventDefault();
-    jQuery.fancybox.prev();
+    $overlayDark.fadeIn(200, function(){
+      $.fancybox.close();
+      $.fancybox.prev();
+      setTimeout(function(){ $overlayDark.fadeOut(200); }, 200);
+    });
   });
 
 }); //eo:jQuery
