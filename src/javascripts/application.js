@@ -8,7 +8,6 @@ var $body = $('body'),
     $links = $('.filter, .about, .email'),
     $filter = $('.filter'),
     $about = $('.about'),
-    $overlay = $(".overlay"),
     $overlayDark = $(".overlay-dark"),
     $item = $(".item");
 
@@ -71,26 +70,19 @@ var $body = $('body'),
 
 // Fancybox
   $(".item, .about").fancybox({
-    type       : 'ajax',
-    closeBtn   : false,
-    closeClick : false,
-    fitToView  : false,
-    autoSize   : false,
-    width      : '100%',
-    height     : '100%',
-    padding    : 0,
-    margin     : 0,
-    arrows     : false,
-    nextMethod : 'fade',
-    prevMethod : 'fade',
-     afterShow: function() { 
-      // $body.css({'position': 'fixed'});
-      $body.css({'overlflow': 'hidden'});
-    },
-    beforeClose: function() {
-      // $body.css({'position': ''});
-      $body.css({'overlflow': 'visible'});
-    }
+    closeBtn      : false,
+    closeClick    : false,
+    fitToView     : false,
+    autoSize      : false,
+    arrows        : false,
+    scrollOutside : false,
+    type          : 'ajax',
+    nextEffect    : 'fade',
+    prevEffect    : 'fade',
+    width         : '100%',
+    height        : '100%',
+    padding       : 0,
+    margin        : 0
   });
 
   
