@@ -74,8 +74,6 @@ var $body = $('body'),
     type       : 'ajax',
     closeBtn   : false,
     closeClick : false,
-    // nextEffect : 'fade',
-    // prevEffect : 'fade',
     fitToView  : false,
     autoSize   : false,
     width      : '100%',
@@ -85,6 +83,14 @@ var $body = $('body'),
     arrows     : false,
     nextMethod : 'fade',
     prevMethod : 'fade',
+     afterShow: function() { 
+      // $body.css({'position': 'fixed'});
+      $body.css({'overlflow': 'hidden'});
+    },
+    beforeClose: function() {
+      // $body.css({'position': ''});
+      $body.css({'overlflow': 'visible'});
+    }
   });
 
   
