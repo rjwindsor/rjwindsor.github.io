@@ -93,6 +93,14 @@ header ul {
   height: 100%;
   max-width: 100%;
   overflow-x:hidden;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  }
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
 }
 
 // Main Content
@@ -159,8 +167,8 @@ header ul {
 .body-email{
   font-weight: bold;
   font-style: normal;
-  padding-bottom: 20px;
-  text-indent: 0;
+  text-indent: 0 !important;
+  margin-bottom: 30px !important;
 }
 
 .block{
@@ -197,6 +205,7 @@ p.copy{
 
 // Fancybox Version
 .overlay-wrapper{margin-top: 100px;}
+
 .fancybox-inner{
   header{animation: none;}
   .email, .site-title{position: absolute;display: none;}

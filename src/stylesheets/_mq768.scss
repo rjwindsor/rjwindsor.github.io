@@ -1,16 +1,18 @@
 // 768 ===================================================
 
-.fixed-area{
-  margin: 0 6.510416667%;
-}
+.fixed-area{ margin: 0 6.510416667%;}
 
 .overlay-wrapper{
   width: auto;
   padding: 0 100px 120px 100px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
   img{
     width: 100%;
     margin: 0 0 20px 0;
   }
+
   &.about-overlay .block{padding: 0;}
 }
 
@@ -47,12 +49,9 @@
   margin: 0 auto 48px auto;
 }
 
-// Pagination
-.pagination{
-  right: 106px;
-  left: auto;
+.email {
+  display: block!important;
 }
-
 
 // Footer
 p.copy span.break{display: none;clear: none;}
