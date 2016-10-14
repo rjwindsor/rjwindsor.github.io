@@ -62,7 +62,7 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
   
   return gulp.src([
-    paths.src + 'javascripts/jquery.min.js',
+    paths.src + 'javascripts/jquery.js',
     paths.src + 'javascripts/imagesloaded.js',
     paths.src + 'javascripts/isotope.js',
     paths.src + 'javascripts/fancybox.js',
