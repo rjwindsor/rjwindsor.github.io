@@ -9,7 +9,8 @@ var $body = $('body'),
     $filter = $('.filter'),
     $about = $('.about'),
     $overlayDark = $(".overlay-dark"),
-    $item = $(".item");
+    $item = $(".item"),
+    $header = $("header");
 
   
   // Initialize Isotope
@@ -68,7 +69,9 @@ var $body = $('body'),
     });
   })
 
-// Fancybox
+  // Fancybox
+  // --------------------------------------------------------
+
   $(".item, .about").fancybox({
     closeBtn      : false,
     closeClick    : false,
@@ -90,7 +93,7 @@ var $body = $('body'),
     }
   });
 
-  
+
   // Close
   $body.on( "click", ".close", function(e) {
     e.preventDefault();
@@ -101,7 +104,6 @@ var $body = $('body'),
   $body.on( "click", ".next", function(e) {
     e.preventDefault();
     $overlayDark.fadeIn(200, function(){
-      $.fancybox.close();
       $.fancybox.next();
       setTimeout(function(){ $overlayDark.fadeOut(200); }, 200);
     });
@@ -111,7 +113,6 @@ var $body = $('body'),
   $body.on( "click", ".prev", function(e) {
     e.preventDefault();
     $overlayDark.fadeIn(200, function(){
-      $.fancybox.close();
       $.fancybox.prev();
       setTimeout(function(){ $overlayDark.fadeOut(200); }, 200);
     });
@@ -122,5 +123,5 @@ var $body = $('body'),
 
 // Remove Inline Styles on re-size
 $( window ).resize(function() {
-  $("header").children().removeAttr( "style" );
+  $header.children().removeAttr( "style" );
 });
