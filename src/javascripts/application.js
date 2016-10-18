@@ -105,7 +105,7 @@ var $body = $('body'),
     e.preventDefault();
     $overlayDark.fadeIn(200, function(){
       $.fancybox.next();
-      setTimeout(function(){ $overlayDark.fadeOut(200); }, 200);
+      setTimeout(function(){ $overlayDark.fadeOut(200); }, 500);
     });
   });
 
@@ -114,7 +114,7 @@ var $body = $('body'),
     e.preventDefault();
     $overlayDark.fadeIn(200, function(){
       $.fancybox.prev();
-      setTimeout(function(){ $overlayDark.fadeOut(200); }, 200);
+      setTimeout(function(){ $overlayDark.fadeOut(200); }, 500);
     });
   });
 
