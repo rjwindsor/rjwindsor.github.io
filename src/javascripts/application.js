@@ -72,7 +72,7 @@ var $body = $('body'),
   // Fancybox
   // --------------------------------------------------------
 
-  $(".item, .about").fancybox({
+  $(".item").fancybox({
     closeBtn      : false,
     closeClick    : false,
     fitToView     : false,
@@ -92,6 +92,29 @@ var $body = $('body'),
       }
     }
   });
+
+  // About
+  $(".about").fancybox({
+    closeBtn      : false,
+    closeClick    : false,
+    fitToView     : false,
+    autoSize      : false,
+    arrows        : false,
+    scrollOutside : false,
+    type          : 'inline',
+    nextEffect    : 'fade',
+    prevEffect    : 'fade',
+    width         : '100%',
+    height        : '100%',
+    padding       : 0,
+    margin        : 0,
+    helpers: {
+      overlay: {
+        locked: true 
+      }
+    }
+  });
+
 
 
   // Close
